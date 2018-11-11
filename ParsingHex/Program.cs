@@ -25,9 +25,9 @@ namespace ParsingHex
 
             foreach (Match match in _regex.Matches(_str))
             {
-                string hexValue = match.Value;
-                int decValue = Convert.ToInt32(hexValue, 16);
-                Console.Error.WriteLine("{0} {1}", hexValue, decValue);
+                string hexValue = match.Value;                
+                long decValue = Convert.ToUInt32(hexValue, 16);
+                Console.WriteLine("{0} {1}", hexValue, decValue);
             }          
         }
 
