@@ -1,6 +1,8 @@
 # Kattis
 
 ### Problems
-- [Hello World!](HelloWorld)
 - [Alphabet Spam](AlphabetSpam)
-- [Yoda](Yoda)      
+- [Hello World!](HelloWorld)
+- [Simple Addition](SimpleAddition)
+- [Yoda](Yoda)
+
