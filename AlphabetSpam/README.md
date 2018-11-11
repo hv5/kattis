@@ -3,7 +3,7 @@
 ### [Problem description](https://open.kattis.com/problems/alphabetspam)
 
 ### Build
-dotnet build
+- dotnet build
 
 ### Test
-test
+- test
