@@ -16,19 +16,18 @@ namespace AlphabetSpam
         void Run()
         {
             string line;
-            while ((line = Console.ReadLine()) != null) {
+            while ((line = Console.ReadLine()) != null)
                 Process(line);     
-            }
         }
 
         void Process(string str)
         {
             //var parts = str.Split(new char[] {' '}, StringSplitOptions.None);
 
-            int totalCount = str.Length;
+            int countAll = str.Length;
             int countUpperCase = 0; 
             int countLowerCase = 0; 
-            int countUnderScore= 0; 
+            int countUnderScore = 0; 
             int countOtherSymbol = 0;
 
             byte[] bytes = Encoding.ASCII.GetBytes(str);
@@ -44,12 +43,12 @@ namespace AlphabetSpam
                     countOtherSymbol++; // other
             }
             
-            if (totalCount > 0) 
+            if (countAll > 0) 
             {
-                Console.WriteLine((double)countUnderScore/totalCount);
-                Console.WriteLine((double)countLowerCase/totalCount);
-                Console.WriteLine((double)countUpperCase/totalCount);
-                Console.WriteLine((double)countOtherSymbol/totalCount);            
+                Console.WriteLine((double)countUnderScore/countAll);
+                Console.WriteLine((double)countLowerCase/countAll);
+                Console.WriteLine((double)countUpperCase/countAll);
+                Console.WriteLine((double)countOtherSymbol/countAll);            
             }
         }
 
