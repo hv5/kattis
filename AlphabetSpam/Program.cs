@@ -5,6 +5,8 @@ namespace AlphabetSpam
 {
     class Program
     {
+        private string _str;
+
         void Start()
         {
             var watch = System.Diagnostics.Stopwatch.StartNew();
@@ -14,23 +16,22 @@ namespace AlphabetSpam
         }
 
         void Run()
-        {
-            string line;
-            while ((line = Console.ReadLine()) != null)
-                Process(line);     
+        {       
+            while ((_str = Console.ReadLine()) != null)
+                Process();     
         }
 
-        void Process(string str)
+        void Process()
         {
             //var parts = str.Split(new char[] {' '}, StringSplitOptions.None);
 
-            int countAll = str.Length;
+            int countAll = _str.Length;
             int countUpperCase = 0; 
             int countLowerCase = 0; 
             int countUnderScore = 0; 
             int countOtherSymbol = 0;
 
-            byte[] bytes = Encoding.ASCII.GetBytes(str);
+            byte[] bytes = Encoding.ASCII.GetBytes(_str);
             foreach (byte b in bytes)
             {
                 if (b == 95) // underscore
