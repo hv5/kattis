@@ -3,8 +3,8 @@
 ### [Problem description](https://open.kattis.com/problems/parsinghex)
 
 ### Build
-- dotnet build
+dotnet build
 
 ### Run
-- type data\sample.in | dotnet run
+type data\sample.in | dotnet run
 

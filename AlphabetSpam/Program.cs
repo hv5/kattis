@@ -7,18 +7,15 @@ namespace AlphabetSpam
     {
         private string _str;
 
-        void Start()
+        void Run()
         {
             var watch = System.Diagnostics.Stopwatch.StartNew();
-            Run();
-            watch.Stop();
-            //Console.Error.WriteLine("Completed in {0} ms", watch.ElapsedMilliseconds);
-        }
 
-        void Run()
-        {       
             while ((_str = Console.ReadLine()) != null)
-                Process();     
+                Process();   
+
+            watch.Stop();
+            //Console.Error.WriteLine("Completed in {0} ms", watch.ElapsedMilliseconds);  
         }
 
         void Process()
@@ -56,7 +53,7 @@ namespace AlphabetSpam
         static void Main(string[] args)
         {
             var prog = new Program();
-            prog.Start();
+            prog.Run();
         }
     }
 }
