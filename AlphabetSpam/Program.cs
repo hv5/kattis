@@ -36,18 +36,18 @@ namespace AlphabetSpam
             {
                 if (b == 95) // underscore
                     countUnderScore++;
-                else if (b >= 97 && b <= 122)
+                else if (b >= 97 && b <= 122) // lowercase
                     countLowerCase++;
-                else if (b >= 65 && b <= 90)
+                else if (b >= 65 && b <= 90) // uppercase
                     countUpperCase++;
                 else 
-                    countOtherSymbol++;
+                    countOtherSymbol++; // other
             }
             
             if (totalCount > 0) 
             {
                 Console.WriteLine((double)countUnderScore/totalCount);
-                 Console.WriteLine((double)countLowerCase/totalCount);
+                Console.WriteLine((double)countLowerCase/totalCount);
                 Console.WriteLine((double)countUpperCase/totalCount);
                 Console.WriteLine((double)countOtherSymbol/totalCount);            
             }
