@@ -2,8 +2,6 @@
 
 ### [Problem description](https://open.kattis.com/problems/hello)
 
-### Build
+### Commands
 - dotnet build
-
-### Run
 - dotnet run

@@ -1,10 +1,7 @@
-# Rimski
+# Nizovi
 
-### [Problem description](https://open.kattis.com/problems/rimski)
+### [Problem description](https://open.kattis.com/problems/nizovi)
 
-### Build
+### Commands
 - dotnet build
-
-### Run
 - test
-

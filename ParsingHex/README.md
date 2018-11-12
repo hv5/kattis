@@ -2,8 +2,6 @@
 
 ### [Problem description](https://open.kattis.com/problems/parsinghex)
 
-### Build
+### Commands
 - dotnet build
-
-### Run
 - test

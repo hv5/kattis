@@ -2,8 +2,6 @@
 
 ### [Problem description](https://open.kattis.com/problems/simpleaddition)
 
-### Build
+### Commands
 - dotnet build
-
-### Run
 - test

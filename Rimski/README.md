@@ -2,9 +2,6 @@
 
 ### [Problem description](https://open.kattis.com/problems/rimski)
 
-### Build
+### Commands
 - dotnet build
-
-### Run
 - test
-

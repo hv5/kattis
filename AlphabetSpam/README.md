@@ -2,8 +2,6 @@
 
 ### [Problem description](https://open.kattis.com/problems/alphabetspam)
 
-### Build
+### Commands
 - dotnet build
-
-### Test
 - test
