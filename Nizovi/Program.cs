@@ -16,56 +16,48 @@ namespace Nizovi
         }
 
         void Process()
-        {   
-            //_str = "{a,b,{c,d},e,{}}";
-            //_str = "{}";
-            //Console.Error.WriteLine(_str);
+        {  
+            Console.Error.WriteLine(_str);
 
-            string GetIndented(int shift, string str)
-            {
-                return new string(' ',shift) + str;
-            }
+            int indent = 0;
+            StringBuilder builder = new StringBuilder();
 
-            string body = Regex.Replace(_str, @"^{(.*)}$", "$1");
-            string[] parts = body.Split(',');
-
-            int indent = 2;
-
-            List<string> stringList = new List<string>();
-
-            StringBuilder currentBlock = new StringBuilder();
-
-            foreach(string part in parts)
-            {
-                string str = part;
-                if (str.StartsWith('{')) 
-                {
-                    str = str.TrimStart('{');
-                    currentBlock.Append(GetIndented(indent, "{")).AppendLine();
+            foreach (char c in _str)
+            {   
+                if (c == '{') {
+                    builder.Append("{");
+                    builder.AppendLine();          
                     indent += 2;
+                    builder.Append(GetIndentedString(indent, ""));
                 }
-                if (str.EndsWith('}')) 
-                {
-                    str = str.TrimEnd('}');
-                    if (str.Length > 0)
-                        currentBlock.Append(GetIndented(indent, str)).AppendLine();
+                else if (c == '}') {
+                    builder.AppendLine();
                     indent -= 2;
-                    currentBlock.Append(GetIndented(indent, "}"));
-                    stringList.Add(currentBlock.ToString());
-                    currentBlock.Clear();
-                    str = string.Empty;
+                    builder.Append(GetIndentedString(indent, "}"));
+                                   
                 }
-
-                if (currentBlock.Length > 0)
-                    currentBlock.Append(GetIndented(indent, str + ',')).AppendLine();
-                else if (str.Length > 0)
-                    stringList.Add(GetIndented(indent, str));
+                else if (c == ',') {
+                    builder.Append(",");
+                    builder.AppendLine();
+                    builder.Append(GetIndentedString(indent, ""));
+                }
+                else {
+                    builder.Append(c);
+                }
             }
 
-            Console.WriteLine('{');
-            if (stringList.Count > 0)
-                Console.WriteLine(string.Join(",\n", stringList.ToArray()));
-            Console.WriteLine('}');
+            string[] lines = builder.ToString().Split(new[] { Environment.NewLine }, StringSplitOptions.None);
+            foreach (string line in lines)
+            {
+                string str = line.Trim();
+                if (str.Length > 0)
+                    Console.WriteLine(line);
+            }
+        }
+        
+        static string GetIndentedString(int shift, string str)
+        {
+            return new string(' ',shift) + str;
         }
 
         static void Main(string[] args)
