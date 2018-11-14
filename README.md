@@ -3,6 +3,7 @@
 ### Problems
 - [Alphabet Spam](AlphabetSpam)
 - [Hello World!](HelloWorld)
+- [How Many Zeros](HowManyZeros)
 - [Nizovi](Nizovi)
 - [Parsing Hex](ParsingHex)
 - [Rimski](Rimski)
